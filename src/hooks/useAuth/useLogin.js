@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
-import { loginUser } from "../../components/services/authApi";
+import { loginUser } from "../../services/authApi";
 
 const useLogin = () => {
   const [formData, setFormData] = useState({
@@ -38,8 +38,15 @@ const useLogin = () => {
     try {
       const response = await loginUser(formData);
       if (response.data.success) {
-        dispatch({ type: "login", token: response.data.data.token });
-        dispatch({ type: "userType", userType: "user" });
+        dispatch({
+          type: "login",
+          user: response.data.data.user, // always returned by backend
+          token: response.data.data.token,
+        });
+        dispatch({
+          type: "userType",
+          userType: "user",
+        });
 
         toast.success(response.data.message || "Login successful!");
         navigate(from, { replace: true });

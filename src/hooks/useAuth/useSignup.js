@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { loginUser, registerUser } from "../../components/services/authApi";
+import { loginUser, registerUser } from "../../services/authApi";
 
 const useSignup = (switchToLogin) => {
   const [formData, setFormData] = useState({

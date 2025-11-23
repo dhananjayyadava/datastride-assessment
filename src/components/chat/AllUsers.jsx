@@ -1,9 +1,9 @@
 import React from "react";
 import { X, Loader2, User } from "lucide-react";
-import useFetchData from "../../hooks/global-hooks/useFetchData";
+import useFetchData from "../../hooks/useFetch/useFetchData";
 
 const AllUsers = ({ onClose, onUserSelect }) => {
-  const { data: users, loading, error } = useFetchData("/api/chat/all-users");
+  const { data: users, loading, error } = useFetchData("chat/all-users");
 
   const handleUserSelect = (user) => {
     if (onUserSelect) {

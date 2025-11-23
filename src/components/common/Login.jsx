@@ -1,4 +1,4 @@
-import useLogin from "../../hooks/auth-hooks/useLogin";
+import useLogin from "../../hooks/useAuth/useLogin";
 
 const Login = ({ switchToSignup }) => {
   const { formData, isLoading, handleChange, handleSubmit } = useLogin();

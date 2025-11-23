@@ -1,12 +1,16 @@
-import useSignup from "../../hooks/auth-hooks/useSignup";
+import useSignup from "../../hooks/useAuth/useSignup";
 
 const Signup = ({ switchToLogin }) => {
-  const { formData, handleChange, handleSubmit, isLoading, errors } = useSignup(switchToLogin);
+  const { formData, handleChange, handleSubmit, isLoading, errors } =
+    useSignup(switchToLogin);
 
   return (
     <form onSubmit={handleSubmit}>
       <div className="mb-6">
-        <label htmlFor="username" className="block text-gray-700 text-sm font-medium mb-2">
+        <label
+          htmlFor="username"
+          className="block text-gray-700 text-sm font-medium mb-2"
+        >
           Name
         </label>
         <input
@@ -20,11 +24,13 @@ const Signup = ({ switchToLogin }) => {
           } focus:outline-none focus:ring-2 focus:ring-blue-500`}
           placeholder="Enter your full name "
         />
-        {errors?.username && <p className="text-red-500 text-xs mt-1">{errors.username}</p>}
       </div>
 
       <div className="mb-6">
-        <label htmlFor="email" className="block text-gray-700 text-sm font-medium mb-2">
+        <label
+          htmlFor="email"
+          className="block text-gray-700 text-sm font-medium mb-2"
+        >
           Email
         </label>
         <input
@@ -38,11 +44,13 @@ const Signup = ({ switchToLogin }) => {
           } focus:outline-none focus:ring-2 focus:ring-blue-500`}
           placeholder="Enter your email"
         />
-        {errors?.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
       </div>
 
       <div className="mb-6">
-        <label htmlFor="password" className="block text-gray-700 text-sm font-medium mb-2">
+        <label
+          htmlFor="password"
+          className="block text-gray-700 text-sm font-medium mb-2"
+        >
           Password
         </label>
         <input
@@ -56,7 +64,6 @@ const Signup = ({ switchToLogin }) => {
           } focus:outline-none focus:ring-2 focus:ring-blue-500`}
           placeholder="Create a password"
         />
-        {errors?.password && <p className="text-red-500 text-xs mt-1">{errors.password}</p>}
       </div>
 
       <button
@@ -72,7 +79,14 @@ const Signup = ({ switchToLogin }) => {
               fill="none"
               viewBox="0 0 24 24"
             >
-              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              ></circle>
               <path
                 className="opacity-75"
                 fill="currentColor"
@@ -89,7 +103,11 @@ const Signup = ({ switchToLogin }) => {
       <div className="mt-8 text-center">
         <p className="text-sm text-gray-600">
           Already have an account?{" "}
-          <button type="button" className="text-blue-600 hover:text-blue-800 font-medium" onClick={switchToLogin}>
+          <button
+            type="button"
+            className="text-blue-600 hover:text-blue-800 font-medium"
+            onClick={switchToLogin}
+          >
             Sign in
           </button>
         </p>

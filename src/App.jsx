@@ -10,8 +10,8 @@ import {
 } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import ChatComponent from "./components/discussion/ChatComponent.jsx";
-import AuthContainer from "./global/auth/AuthPage.jsx";
+import ChatComponent from "./components/chat/ChatComponent.jsx";
+import AuthContainer from "./components/common/AuthPage.jsx";
 
 // Protected Route Wrapper (All Routes Are Protected Except Login)
 const ProtectedRoute = () => {
